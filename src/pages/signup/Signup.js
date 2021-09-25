@@ -82,7 +82,7 @@ const SignUp = () => {
         }}
       >
         {error && <p style={{ color: "red" }}>User Already Exists!</p>}
-        <Typography style={{ marginBottom: "4%",fontFamily:"Lobster, cursive",fontWeight:"400",fontSize:"40px" }} component="h1" variant="h5">
+        <Typography style={{ color:"white", marginBottom: "4%",fontFamily:"Lobster, cursive",fontWeight:"400",fontSize:"40px" }} component="h1" variant="h5">
           Pixl Plant
         </Typography>
         <form noValidate onSubmit={handleSubmit(authSubmitHandler)}>
@@ -100,6 +100,7 @@ const SignUp = () => {
                 autoFocus
                 error={Boolean(errors.userName)}
                 helperText={errors.userName?.message}
+                
               />
             </Grid>
             <Grid item xs={12} sm={6}>
@@ -134,6 +135,7 @@ const SignUp = () => {
           <TextField
             variant="outlined"
             margin="normal"
+            style={{ color:"white"}}
             {...register("password")}
             required
             fullWidth

@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { AuthContext } from "../../Auth/authContext";
 import Navbar from "../../components/Navbar";
 import { Button } from "@mui/material";
+import "./Home.css";
 
 const Home = () => {
   const auth = useContext(AuthContext);
