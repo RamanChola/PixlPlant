@@ -7,6 +7,7 @@ import { AuthContext } from "../../Auth/authContext";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
+import "./login.css";
 
 const Login = () => {
   const { register, handleSubmit } = useForm();
@@ -38,7 +39,7 @@ const Login = () => {
         height: "100vh",
       }}
     >
-      <Typography style={{ marginBottom: "2%",fontFamily:"Lobster, cursive",fontWeight:"400",fontSize:"40px" }} component="h1" variant="h5">
+      <Typography style={{ marginBottom: "2%",fontFamily:"Lobster, cursive",fontWeight:"400",fontSize:"40px", color:"white" }} component="h1" variant="h5">
         Pixl Plant
       </Typography>
       <form

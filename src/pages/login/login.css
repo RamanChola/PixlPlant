@@ -1,0 +1,5 @@
+body{
+    background:  linear-gradient(to top, transparent, #00000071), url("../../flowerField.jpg");
+ background-repeat: no-repeat;
+ background-size: 2000px 1000px; 
+}
