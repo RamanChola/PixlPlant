@@ -5,12 +5,26 @@ import { IconButton, Typography } from "@mui/material";
 import PlayCircleIcon from "@mui/icons-material/PlayCircle";
 import { AuthContext } from "../../Auth/authContext";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import { useHistory } from "react-router-dom";
 
 const Login = () => {
   const { register, handleSubmit } = useForm();
   const auth = useContext(AuthContext);
+  let history = useHistory();
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
+    try {
+      const responseData = await axios.post(`https://pixl-plant-backend-5l348.ondigitalocean.app/api/users/login`, {
+        username: data.username,
+        password: data.password,
+      });
+      auth.login(responseData.data.username);
+      history.push("/");
+
+    } catch (error) {
+      console.log(error)
+    }
     console.log(data);
     auth.login(data.username);
   };

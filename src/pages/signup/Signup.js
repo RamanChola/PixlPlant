@@ -1,6 +1,4 @@
 import React, { useContext } from "react";
-// import { AuthContext } from "../auth-context";
-// import { useHistory } from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
@@ -12,7 +10,8 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import { Button } from "@mui/material";
 import { AuthContext } from "../../Auth/authContext";
 import { Link } from "react-router-dom";
-// import axios from "axios";
+import { useHistory } from "react-router-dom";
+import axios from "axios";
 const schema = yup.object().shape({
   userName: yup
     .string()
@@ -43,8 +42,8 @@ const schema = yup.object().shape({
 });
 
 const SignUp = () => {
-    // eslint-disable-next-line
   const [error, setError] = React.useState(false);
+  let history = useHistory();
   const auth = useContext(AuthContext);
   const {
     register,
@@ -53,24 +52,22 @@ const SignUp = () => {
   } = useForm({
     resolver: yupResolver(schema),
   });
-  //   let history = useHistory();
+    
   const authSubmitHandler = async (event) => {
-    // try {
-    //   // eslint-disable-next-line
-    //   const responseData = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/users/signup`, {
-    //     email: event.email,
-    //     password: event.password,
-    //     username: event.firstName,
-    //     lastname: event.lastName,
-    //   });
-    //   auth.login(responseData.data.userId,responseData.data.token);
-    //   history.push("/");
+    try {
+      const responseData = await axios.post(`https://pixl-plant-backend-5l348.ondigitalocean.app/api/users/signup`, {
+        email: event.email,
+        password: event.password,
+        username: event.userName,
+        lastname: event.lastName,
+      });
+      auth.login(responseData.data.user.username);
+      history.push("/");
 
-    // } catch (error) {
-    //   error.response.status === 422 && setError(true);
-    // }
+    } catch (error) {
+      error.response.status === 422 && setError(true);
+    }
     console.log(event);
-    auth.login(event.userName);
   };
   return (
     <Container maxWidth="sm">
