@@ -125,7 +125,7 @@ const Home = () => {
       </form>
       <div>
         <div
-          style={{ display: "flex", justifyContent: "center", margin: "-74px" }}
+          style={{ display: "flex", justifyContent: "center", margin: "-73px" }}
         >
           {apiPlants.map(
             (plant, index) =>
