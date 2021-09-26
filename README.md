@@ -1,70 +1,55 @@
-# Getting Started with Create React App
+## What it does:
+Purpose of Pixl Plant app is to incentivize users to take care of and acquire more plants by creating a virtual plant in the app. We used plants that are common such as sunflower, croton, and lilies. While also providing information on the plants that will aid in taking care of their virtual/real plant. The virtual plants are linked to:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- A restAPI connected to mongoDB for fetching and adding plants. 
 
-## Available Scripts
 
-In the project directory, you can run:
+## How we built it
+Our team built Pixl Plant by collaborating over GitHub and coding in HTML, JavaScript, react, mongoDB, materiaUI.
 
-### `npm start`
+##Problems we ran into:
+Some challenges we ran into were formatting the login page’s “login” input fields, as well as having difficulties with implementing pictures of our plants. The pictures of the plants we had would not show due to errors in our code, but the problem was swiftly corrected. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Accomplishments that we're proud of:
+Learned how to use react with material UI and learned how to implement animated backgrounds for the project. Also was able to complete the goals we set out for ourselves using the limited time we had while learning new languages. Handled errors more swiftly as time went on as the minutes ticked by we got better.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+##What we learned:
+MaterialUi 5 is the latest version that was released a month before the event. A lot of the methods that people used in previous documentation was not available. We still figured it out and bypassed the issues.
 
-### `npm test`
+##What’s next for Pixl Plant:
+As for Pixl Plant’s future, we plan on developing the application further by adding to our library of known plants and their specific watering habits, sunlight requirements, and other key facts. We also plan on adding fun activities to do in-app, like chat rooms, garden creation, and garden visiting by other users.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Pixelated images were hosted on a firebase storage. Login page accepts users credentials and displays error message when valid password requirements aren’t met.
 
-### `npm run build`
+All the links we used for the project are provided below including the converter used to change normal pictures to pixels. Any plant pixel we could not find we used the converter to change a normal picture to a pixel version.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Converter Sites
+Image to pixel converter: https://giventofly.github.io/pixelit/
 
-### `npm run eject`
+Website for pixel images: https://www.pinclipart.com/
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Image Links
+Sunflower: 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+https://www.pinclipart.com/pindetail/ioThJo_britton-sunflower-planting-sunflower-life-cycle-clipart/
 
-## Learn More
+Easter Lilies: https://www.pinclipart.com/pindetail/ibTmbiJ_clip-art-easter-lilies-png-download/
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Pixel room 1: https://www.pinterest.com/pin/759138080915780395/
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Flower field: https://wallpaperaccess.com/1366x768-pixel-art
 
-### Code Splitting
+Croton: https://www.seekpng.com/png/full/301-3018351_croton-large-flowerpot.png
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Golden Pothos: https://sharvaridesai.gitlab.io/hexo-theme-milan/Pothos/ 
 
-### Analyzing the Bundle Size
+Corn Plant: https://www.pngkit.com/bigpic/u2e6y3t4q8y3w7t4/ 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Moth Orchid: https://www.pngkit.com/bigpic/u2q8w7u2e6r5q8u2/
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
