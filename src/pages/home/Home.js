@@ -3,13 +3,28 @@ import { AuthContext } from "../../Auth/authContext";
 import Navbar from "../../components/Navbar";
 import { Button } from "@mui/material";
 import "./Home.css";
+import { useHistory } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import TextField from "@mui/material/TextField";
 
 const Home = () => {
   const auth = useContext(AuthContext);
+  const { register, handleSubmit } = useForm();
+  let history = useHistory();
+
+  const onSubmit = async (data) => {
+    console.log(data);
+    auth.login(data.plantname);
+  };
+
   return (
     <div>
       <Navbar />
       <b>Welcome to homepage, {auth.user} </b>
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        style={{ display: "flex", flexDirection: "column" }}
+      >
       <Button style={{
             position: "absolute",
             marginLeft: "600px",
@@ -19,9 +34,25 @@ const Home = () => {
             borderColor: "black",
             color:"black"
           }}
-          variant="outlined" size="large">
+          variant="outlined" size="large" type="submit">
         <b>Add Plant</b>
       </Button>
+      
+      <TextField style={{
+        position: "absolute",
+        marginLeft: "560px",
+        marginTop: "175px",
+        backgroundColor: "pink"
+        }}
+        name="plantName"
+        {...register("plantName")}
+        variant="outlined"
+        required
+        id="plantName"
+        label="Which plant to add?"
+        size="normal"
+        autoFocus
+      />
 
       <Button style={{
             position: "absolute",
@@ -83,7 +114,7 @@ const Home = () => {
           variant="outlined" size="large">
         Plant 4
       </Button>
-      
+      </form>
     </div>
   );
 };
