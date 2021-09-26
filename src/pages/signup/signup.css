@@ -3,3 +3,7 @@ body{
     background-repeat: no-repeat;
     background-size: 2000px 1000px; 
 }
+
+.textfield__label {
+    color: white;
+}
