@@ -12,36 +12,34 @@ const Home = () => {
       <b>Welcome to homepage, {auth.user} </b>
       <Button style={{
             position: "absolute",
-            left: "auto",
-            marginLeft: "auto",
-            marginTop: "50px",
-            marginRight: "220px",
+            marginLeft: "600px",
+            marginTop: "100px",
             textAlign: "center",
-            backgroundColor: "transparent",
+            backgroundColor: "pink",
+            borderColor: "black",
             color:"black"
           }}
           variant="outlined" size="large">
-        Add Plant
+        <b>Add Plant</b>
       </Button>
 
       <Button style={{
             position: "absolute",
-            right: "auto",
-            marginLeft: "220px",
-            marginTop: "50px",
-            marginRight: "auto",
+            marginLeft: "775px",
+            marginTop: "100px",
             textAlign: "center",
-            backgroundColor: "transparent",
+            backgroundColor: "pink",
+            borderColor: "black",
             color:"black"
           }}
           variant="outlined" size="large">
-        Remove Plant
+        <b>Remove Plant</b>
       </Button>
       
       <Button style={{
             position: "absolute",
             marginLeft: "600px",
-            marginTop: "400px",
+            marginTop: "350px",
             textAlign: "center",
             backgroundColor: "transparent",
             color:"black"
@@ -52,14 +50,38 @@ const Home = () => {
 
       <Button style={{
             position: "absolute",
-            marginLeft: "800px",
-            marginTop: "400px",
+            marginLeft: "725px",
+            marginTop: "350px",
             textAlign: "center",
             backgroundColor: "transparent",
             color:"black"
           }}
           variant="outlined" size="large">
         Plant 2
+      </Button>
+
+      <Button style={{
+            position: "absolute",
+            marginLeft: "850px",
+            marginTop: "350px",
+            textAlign: "center",
+            backgroundColor: "transparent",
+            color:"black"
+          }}
+          variant="outlined" size="large">
+        Plant 3
+      </Button>
+
+      <Button style={{
+            position: "absolute",
+            marginLeft: "975px",
+            marginTop: "350px",
+            textAlign: "center",
+            backgroundColor: "transparent",
+            color:"black"
+          }}
+          variant="outlined" size="large">
+        Plant 4
       </Button>
       
     </div>

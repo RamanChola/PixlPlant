@@ -8,9 +8,12 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { Button } from "@mui/material";
+import Box from '@mui/material/Box';
 import { AuthContext } from "../../Auth/authContext";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
+import { createTheme , ThemeProvider } from '@mui/material/styles';
+import './signup.css';
 import axios from "axios";
 const schema = yup.object().shape({
   userName: yup
@@ -82,17 +85,20 @@ const SignUp = () => {
         }}
       >
         {error && <p style={{ color: "red" }}>User Already Exists!</p>}
-        <Typography style={{ color:"white", marginBottom: "4%",fontFamily:"Lobster, cursive",fontWeight:"400",fontSize:"40px" }} component="h1" variant="h5">
+        <Typography style={{ color:"white", marginBottom: "4%",fontFamily:"Lobster, cursive",fontWeight:"400",fontSize:"60px" }} component="h1" variant="h5">
           Pixl Plant
         </Typography>
         <form noValidate onSubmit={handleSubmit(authSubmitHandler)}>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
-              <TextField
+              <TextField style={{
+                boxShadow:'0 0 10px #ccc',
+                backgroundColor: "#A8CEF1"
+                }}
                 autoComplete="fname"
                 name="userName"
                 {...register("userName")}
-                variant="outlined"
+                variant="filled"
                 required
                 fullWidth
                 id="userName"
@@ -100,12 +106,14 @@ const SignUp = () => {
                 autoFocus
                 error={Boolean(errors.userName)}
                 helperText={errors.userName?.message}
-                
               />
             </Grid>
             <Grid item xs={12} sm={6}>
-              <TextField
-                variant="outlined"
+              <TextField style={{
+                boxShadow:'0 0 10px #ccc',
+                backgroundColor: "#A8CEF1"
+                }}
+                variant="filled"
                 {...register("lastName")}
                 required
                 fullWidth
@@ -119,8 +127,11 @@ const SignUp = () => {
             </Grid>
           </Grid>
 
-          <TextField
-            variant="outlined"
+          <TextField style={{
+                boxShadow:'0 0 10px #ccc',
+                backgroundColor: "#A8CEF1"
+                }}
+            variant="filled"
             margin="normal"
             {...register("email")}
             required
@@ -132,30 +143,35 @@ const SignUp = () => {
             error={Boolean(errors.email)}
             helperText={errors.email?.message}
           />
-          <TextField
-            variant="outlined"
+          <TextField style={{
+                boxShadow:'0 0 10px #ccc',
+                backgroundColor: "#A8CEF1"
+                }}
+            variant="filled"
             margin="normal"
-            style={{ color:"white"}}
             {...register("password")}
             required
             fullWidth
             name="password"
-            label="password"
+            label="Password"
             type="password"
             id="password"
             autoComplete="current-password"
             error={Boolean(errors.password)}
             helperText={errors.password?.message}
           />
-          <TextField
-            variant="outlined"
+          <TextField style={{
+                boxShadow:'0 0 10px #ccc',
+                backgroundColor: "#A8CEF1"
+                }}
+            variant="filled"
             margin="normal"
             {...register("confirmPassword")}
-            type="password"
             required
             fullWidth
             name="confirmPassword"
-            label="confirm password"
+            label="Confirm Password"
+            type="password"
             id="confirmPassword"
             autoComplete="current-password"
             error={Boolean(errors.confirmPassword)}
@@ -171,7 +187,7 @@ const SignUp = () => {
             justify="flex-end"
             alignItems="center"
           >
-            <Grid item style={{ marginTop: "10px",fontWeight:"400" }}>
+            <Grid item style={{ marginTop: "10px",fontWeight:"400", color:"white" }}>
               <span >
                 Already have an account?
                 <Link to="/login" style={{ textDecoration: "none" }}>

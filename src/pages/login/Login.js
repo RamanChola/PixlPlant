@@ -39,28 +39,34 @@ const Login = () => {
         height: "100vh",
       }}
     >
-      <Typography style={{ marginBottom: "2%",fontFamily:"Lobster, cursive",fontWeight:"400",fontSize:"40px", color:"white" }} component="h1" variant="h5">
+      <Typography style={{ marginBottom: "2%",fontFamily:"Lobster, cursive",fontWeight:"400",fontSize:"60px", color:"white" }} component="h1" variant="h5">
         Pixl Plant
       </Typography>
       <form
         onSubmit={handleSubmit(onSubmit)}
         style={{ display: "flex", flexDirection: "column" }}
       >
-        <TextField
+        <TextField style={{
+                boxShadow:'0 0 10px #ccc',
+                backgroundColor: "#A8CEF1",
+                margin: "5px"
+                }}
           id="outlined-basic"
           label="Username"
           variant="outlined"
           {...register("username")}
-          style={{ margin: "5px"}}
           required
         />
-        <TextField
+        <TextField style={{
+                boxShadow:'0 0 10px #ccc',
+                backgroundColor: "#A8CEF1",
+                margin: "5px"
+                }}
           id="outlined-basic"
           label="Password"
           type="password"
           variant="outlined"
           {...register("password")}
-          style={{ margin: "5px" }}
           required
         />
         <IconButton
@@ -78,7 +84,7 @@ const Login = () => {
         >
           <PlayCircleIcon style={{ fontSize: "60px" }} />
         </IconButton>
-        <span style={{marginTop:"5px",fontWeight:"400"}}>
+        <span style={{marginTop:"5px",fontWeight:"400", color:"white"}}>
             New to PixlPlant? 
             <Link to="/register" style={{ textDecoration: "none", }}>
               <b> Sign up now.</b>
