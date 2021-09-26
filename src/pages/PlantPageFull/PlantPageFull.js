@@ -14,7 +14,7 @@ const PlantPageFull = () => {
         <img
           src={plant.fullImage}
           alt=""
-          style={{ height: "500px", width: "400px", marginTop: "50px" }}
+          style={{ height: "500px", width: "400px", marginTop: "50px",marginLeft:"30px" }}
         />
         <div style={{ marginTop: "80px",marginLeft:"200px",backgroundColor:"rgba(2,4,8,0.5)",borderRadius: "20px",height: "60vh"}}>
           <div
