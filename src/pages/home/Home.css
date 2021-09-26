@@ -1,5 +1,8 @@
-body{
-    background-image: url("../../pixel_room.jpg");
-    background-repeat: no-repeat;
-    background-size: 2000px 980px;
+.home{
+    background: url("../../pixel_room.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    overflow: hidden;
 }

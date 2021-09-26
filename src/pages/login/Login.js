@@ -16,21 +16,21 @@ const Login = () => {
 
   const onSubmit = async (data) => {
     try {
-      const responseData = await axios.post(`https://pixl-plant-backend-5l348.ondigitalocean.app/api/users/login`, {
-        username: data.username,
-        password: data.password,
-      });
-      auth.login(responseData.data.username);
+      const responseData = await axios.post(
+        `https://pixl-plant-backend-5l348.ondigitalocean.app/api/users/login`,
+        {
+          username: data.username,
+          password: data.password,
+        }
+      );
+      auth.login(responseData.data.user.username);
       history.push("/");
-
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-    console.log(data);
-    auth.login(data.username);
   };
   return (
-    <div
+    <div className="login"
       style={{
         display: "flex",
         justifyContent: "center",
@@ -39,33 +39,45 @@ const Login = () => {
         height: "100vh",
       }}
     >
-      <Typography style={{ marginBottom: "2%",fontFamily:"Lobster, cursive",fontWeight:"400",fontSize:"60px", color:"white" }} component="h1" variant="h5">
+      <Typography
+        style={{
+          marginBottom: "2%",
+          fontFamily: "VT323, monospace",
+          fontWeight: "400",
+          fontSize: "60px",
+          color: "white",
+        }}
+        component="h1"
+        variant="h5"
+      >
         Pixl Plant
       </Typography>
       <form
         onSubmit={handleSubmit(onSubmit)}
         style={{ display: "flex", flexDirection: "column" }}
       >
-        <TextField style={{
-                boxShadow:'0 0 10px #ccc',
-                backgroundColor: "#A8CEF1",
-                margin: "5px"
-                }}
+        <TextField
+          style={{
+            boxShadow: "0 0 10px #ccc",
+            backgroundColor: "#A8CEF1",
+            margin: "5px",
+          }}
           id="outlined-basic"
           label="Username"
-          variant="outlined"
+          variant="filled"
           {...register("username")}
           required
         />
-        <TextField style={{
-                boxShadow:'0 0 10px #ccc',
-                backgroundColor: "#A8CEF1",
-                margin: "5px"
-                }}
+        <TextField
+          style={{
+            boxShadow: "0 0 10px #ccc",
+            backgroundColor: "#A8CEF1",
+            margin: "5px",
+          }}
           id="outlined-basic"
           label="Password"
           type="password"
-          variant="outlined"
+          variant="filled"
           {...register("password")}
           required
         />
@@ -78,18 +90,25 @@ const Login = () => {
             marginRight: "auto",
             textAlign: "center",
             backgroundColor: "transparent",
-            color:"black"
+            color: "lightblue",
           }}
           type="submit"
         >
           <PlayCircleIcon style={{ fontSize: "60px" }} />
         </IconButton>
-        <span style={{marginTop:"5px",fontWeight:"400", color:"white"}}>
-            New to PixlPlant? 
-            <Link to="/register" style={{ textDecoration: "none", }}>
-              <b> Sign up now.</b>
-            </Link>
-          </span>
+        <span style={{ marginTop: "5px", fontWeight: "400", color: "white" }}>
+          New to PixlPlant?
+          <Link
+            to="/register"
+            style={{
+           
+              textDecoration: "none",
+              color: "lightblue",
+            }}
+          >
+            <b> Sign up now.</b>
+          </Link>
+        </span>
       </form>
     </div>
   );

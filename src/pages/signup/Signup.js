@@ -8,12 +8,12 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { Button } from "@mui/material";
-import Box from '@mui/material/Box';
+import Box from "@mui/material/Box";
 import { AuthContext } from "../../Auth/authContext";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
-import { createTheme , ThemeProvider } from '@mui/material/styles';
-import './signup.css';
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import "./signup.css";
 import axios from "axios";
 const schema = yup.object().shape({
   userName: yup
@@ -55,25 +55,26 @@ const SignUp = () => {
   } = useForm({
     resolver: yupResolver(schema),
   });
-    
+
   const authSubmitHandler = async (event) => {
     try {
-      const responseData = await axios.post(`https://pixl-plant-backend-5l348.ondigitalocean.app/api/users/signup`, {
-        email: event.email,
-        password: event.password,
-        username: event.userName,
-        lastname: event.lastName,
-      });
+      const responseData = await axios.post(
+        `https://pixl-plant-backend-5l348.ondigitalocean.app/api/users/signup`,
+        {
+          email: event.email,
+          password: event.password,
+          username: event.userName,
+          lastname: event.lastName,
+        }
+      );
       auth.login(responseData.data.user.username);
       history.push("/");
-
     } catch (error) {
       error.response.status === 422 && setError(true);
     }
-    console.log(event);
   };
   return (
-    <Container maxWidth="sm">
+    <Container maxWidth="sm" className="sign">
       <CssBaseline />
       <div
         style={{
@@ -85,15 +86,26 @@ const SignUp = () => {
         }}
       >
         {error && <p style={{ color: "red" }}>User Already Exists!</p>}
-        <Typography style={{ color:"white", marginBottom: "4%",fontFamily:"Lobster, cursive",fontWeight:"400",fontSize:"60px" }} component="h1" variant="h5">
+        <Typography
+          style={{
+            color: "white",
+            marginBottom: "4%",
+            fontFamily: "VT323, monospace",
+            fontWeight: "400",
+            fontSize: "60px",
+          }}
+          component="h1"
+          variant="h5"
+        >
           Pixl Plant
         </Typography>
         <form noValidate onSubmit={handleSubmit(authSubmitHandler)}>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
-              <TextField style={{
-                boxShadow:'0 0 10px #ccc',
-                backgroundColor: "#A8CEF1"
+              <TextField
+                style={{
+                  boxShadow: "0 0 10px #ccc",
+                  backgroundColor: "#A8CEF1",
                 }}
                 autoComplete="fname"
                 name="userName"
@@ -109,9 +121,10 @@ const SignUp = () => {
               />
             </Grid>
             <Grid item xs={12} sm={6}>
-              <TextField style={{
-                boxShadow:'0 0 10px #ccc',
-                backgroundColor: "#A8CEF1"
+              <TextField
+                style={{
+                  boxShadow: "0 0 10px #ccc",
+                  backgroundColor: "#A8CEF1",
                 }}
                 variant="filled"
                 {...register("lastName")}
@@ -127,10 +140,11 @@ const SignUp = () => {
             </Grid>
           </Grid>
 
-          <TextField style={{
-                boxShadow:'0 0 10px #ccc',
-                backgroundColor: "#A8CEF1"
-                }}
+          <TextField
+            style={{
+              boxShadow: "0 0 10px #ccc",
+              backgroundColor: "#A8CEF1",
+            }}
             variant="filled"
             margin="normal"
             {...register("email")}
@@ -143,10 +157,11 @@ const SignUp = () => {
             error={Boolean(errors.email)}
             helperText={errors.email?.message}
           />
-          <TextField style={{
-                boxShadow:'0 0 10px #ccc',
-                backgroundColor: "#A8CEF1"
-                }}
+          <TextField
+            style={{
+              boxShadow: "0 0 10px #ccc",
+              backgroundColor: "#A8CEF1",
+            }}
             variant="filled"
             margin="normal"
             {...register("password")}
@@ -160,10 +175,11 @@ const SignUp = () => {
             error={Boolean(errors.password)}
             helperText={errors.password?.message}
           />
-          <TextField style={{
-                boxShadow:'0 0 10px #ccc',
-                backgroundColor: "#A8CEF1"
-                }}
+          <TextField
+            style={{
+              boxShadow: "0 0 10px #ccc",
+              backgroundColor: "#A8CEF1",
+            }}
             variant="filled"
             margin="normal"
             {...register("confirmPassword")}
@@ -178,7 +194,16 @@ const SignUp = () => {
             helperText={errors.confirmPassword?.message}
           />
 
-          <Button type="submit" fullWidth variant="contained" style={{backgroundColor:"black"}}>
+          <Button
+            type="submit"
+            fullWidth
+            variant="contained"
+            style={{
+              backgroundColor: "black",
+              fontFamily: "VT323, monospace",
+              fontSize: "20px",
+            }}
+          >
             Sign Up
           </Button>
           <Grid
@@ -187,10 +212,16 @@ const SignUp = () => {
             justify="flex-end"
             alignItems="center"
           >
-            <Grid item style={{ marginTop: "10px",fontWeight:"400", color:"white" }}>
-              <span >
+            <Grid
+              item
+              style={{ marginTop: "10px", fontWeight: "400", color: "white" }}
+            >
+              <span>
                 Already have an account?
-                <Link to="/login" style={{ textDecoration: "none" }}>
+                <Link
+                  to="/login"
+                  style={{ textDecoration: "none", color: "lightblue" }}
+                >
                   <b> Sign In Now</b>
                 </Link>
               </span>
