@@ -140,7 +140,7 @@ const Home = () => {
                   key={index}
                   style={{
                     height: "145px",
-                    width: "120px",
+                    width: "110px",
                     cursor: "pointer",
                   }}
                   src={plant.pixelImage}
