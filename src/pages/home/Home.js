@@ -35,7 +35,7 @@ const Home = () => {
     };
   }, [auth.user]);
 
-  let a = [];
+
   useEffect(() => {
     let unmounted = false;
     plants.map(async (plant) => {
@@ -45,8 +45,9 @@ const Home = () => {
         );
         if (!unmounted) {
           if (responseData.data) {
-            a.push(responseData.data);
-            setApiPlants(a);
+         
+            setApiPlants((prev)=>[...prev,responseData.data]);
+       
           }
         }
       } catch (error) {
@@ -57,7 +58,7 @@ const Home = () => {
       unmounted = true;
     };
   }, [plants]);
-  console.log(apiPlants);
+
   const onSubmit = async (data) => {
     const capitalize = (s) => s && s[0].toUpperCase() + s.slice(1);
     let plantname = capitalize(data.plantName);
@@ -75,6 +76,7 @@ const Home = () => {
       console.log(error);
     }
   };
+  console.log(apiPlants)
   return (
     <div class="home" style={{ height: "100vh" }}>
       <Navbar />
@@ -125,28 +127,28 @@ const Home = () => {
       </form>
       <div>
         <div
-          style={{ display: "flex", justifyContent: "center", margin: "-73px" }}
+          style={{ display: "flex", justifyContent: "center" }}
         >
-          {apiPlants.map(
-            (plant, index) =>
-              plant != null && (
-                <Link
-                  style={{ textDecoration: "none" }}
-                  to={{ pathname: "/fullplantpage", plant: plant }}
-                >
-                  <img
-                    key={index}
-                    style={{
-                      height: "140px",
-                      width: "100px",
-                      cursor: "pointer",
-                    }}
-                    src={plant.pixelImage}
-                    alt=""
-                  />
-                </Link>
-              )
-          )}
+          {apiPlants.map((plant, index) => {
+            return (
+              <Link
+                style={{ textDecoration: "none" }}
+                to={{ pathname: "/fullplantpage", plant: plant }}
+              >
+                {console.log(plant)}
+                <img
+                  key={index}
+                  style={{
+                    height: "145px",
+                    width: "120px",
+                    cursor: "pointer",
+                  }}
+                  src={plant.pixelImage}
+                  alt=""
+                />
+              </Link>
+            );
+          })}
         </div>
       </div>
     </div>
